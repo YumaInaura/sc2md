@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+# Usage: script2md [FILE]...
+# Usage: script2md example.sh > EXAMPLE.md
+
+require 'script2md'
+require 'open-uri'
+
+  if /\Ahttps?:/ =~ ARGV[0]
+    filebody = OpenURI.open_uri(ARGV[0]).read
+    puts Script2md.convert(filebody)
+  else
+    filebody = File.read(ARGV[0])
+    puts Script2md.convert(filebody)
+  end
+
