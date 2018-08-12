@@ -1,22 +1,18 @@
-RSpec.describe Script2md do
-  describe '.convert' do
-    subject { described_class.convert(text, language_type: language_type)  } 
+RSpec.describe 'script2md' do
+    subject { `script2md #{file_path}`.chomp } 
 
     context 'when sh file' do
-      let(:text) { File.read('spec/fixtures/example.sh') }
-      let(:language_type) { 'sh' }
+      let(:file_path) { './spec/fixtures/example.sh' }
       let(:converted_markdown) { File.read('spec/fixtures/example.sh.md') }
 
       it { is_expected.to eq converted_markdown.chomp }
     end
 
     context 'when rb file' do
-      let(:text) { File.read('spec/fixtures/example.rb') }
-      let(:language_type) { 'rb' }
+      let(:file_path) { './spec/fixtures/example.rb' }
       let(:converted_markdown) { File.read('spec/fixtures/example.rb.md') }
 
       it { is_expected.to eq converted_markdown.chomp }
-    end
   end
 end
 

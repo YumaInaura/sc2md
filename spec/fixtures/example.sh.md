@@ -1,11 +1,11 @@
 # Header1
 
-This is example bash script for
+This is example script for
 convert to markdown style
 
 ## Header2
 
-```bash
+```sh
 echo ok
 echo ok # line end code comment
 ```
@@ -13,7 +13,7 @@ echo ok # line end code comment
 This is comment line
 This is comment line
 
-```bash
-echo some command
+```sh
+echo some string
 echo "i wanna conver to markdown this file"
 ```
