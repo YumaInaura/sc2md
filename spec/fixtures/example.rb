@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+#!/usr/bin/env ruby
 
 # # Header1
 # 
@@ -7,12 +7,12 @@
 
 # ## Header2
 
-echo ok
-echo ok # line end code comment
+puts :ok
+puts :ok # line end code comment
 
 # This is comment line
 # This is comment line
 
-echo some string
-echo "i wanna conver to markdown this file"
+puts :some_string
+puts "i wanna conver to markdown this file"
 

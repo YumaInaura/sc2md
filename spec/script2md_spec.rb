@@ -2,10 +2,19 @@ RSpec.describe Script2md do
   describe '.convert' do
     subject { described_class.convert(text)  } 
 
-    let(:text) { File.read('spec/fixtures/example.sh') }
+    context 'when sh file' do
+      let(:text) { File.read('spec/fixtures/example.sh') }
+      let(:converted_markdown) { File.read('spec/fixtures/example.sh.md') }
 
-    let(:converted_markdown) { File.read('spec/fixtures/example.md') }
+      it { is_expected.to eq converted_markdown.chomp }
+    end
 
-    it { is_expected.to eq converted_markdown.chomp }
+    context 'when rb file' do
+      let(:text) { File.read('spec/fixtures/example.rb') }
+      let(:converted_markdown) { File.read('spec/fixtures/example.rb.md') }
+
+      it { is_expected.to eq converted_markdown.chomp }
+    end
   end
 end
+
