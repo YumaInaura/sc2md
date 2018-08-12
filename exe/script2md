@@ -7,10 +7,10 @@ require 'script2md'
 require 'open-uri'
 
   if /\Ahttps?:/ =~ ARGV[0]
-    file_path = ARGV[0]
+    file_path = ARGV[0].chomp
     language_type = file_path.match(/\.([a-z]+)\z/)[1] || nil
     filebody = OpenURI.open_uri(file_path).read
-    puts Script2md.convert(filebody)
+    puts Script2md.convert(filebody, language_type: language_type)
   else
     file_path = ARGV[0]
     language_type = file_path.match(/\.([a-z]+)\z/)[1] || nil
