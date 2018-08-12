@@ -19,3 +19,13 @@ echo some string
 echo "i wanna convert to markdown this file" # For save my console world
 echo "i wanna make you love me"
 ```
+
+## Output example
+
+```
+ok
+ok
+some string
+i wanna convert to markdown this file
+i wanna make you love me
+```
