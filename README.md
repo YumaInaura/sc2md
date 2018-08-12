@@ -27,7 +27,13 @@ Or install it yourself as:
 ### Command 
 
 ```
-script2md ./spec/fixtures/example.sh
+script2md spec/fixtures/example.sh
+```
+
+or
+
+```
+script2md https://raw.githubusercontent.com/YumaInaura/script2md/master/spec/fixtures/example.sh
 ```
 
 ### IN FILE
