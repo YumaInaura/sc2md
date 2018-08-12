@@ -2,7 +2,7 @@
 
 It is a Simple Ruby gem.
 
-Convert script file ( e.g `.sh` `.ru` ) to Markdown file.
+Convert script file ( e.g `.sh` `.rb` ) to Markdown file.
 
 It just only replace script comment line with markdown plain text, and script command line with markdown (fenced) codeblock.
 
