@@ -1,8 +1,10 @@
 # Script2md
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/script2md`. To experiment with that code, run `bin/console` for an interactive prompt.
+It is a Simple Ruby gem.
 
-TODO: Delete this and the text above, and describe your gem
+Convert script file ( e.g `.sh` `.ru` ) to Markdown file.
+
+It just only replace script comment line with markdown plain text, and script command line with markdown (fenced) codeblock.
 
 ## Installation
 
@@ -22,7 +24,56 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Command 
+
+```
+script2md ./spec/fixtures/example.sh
+```
+
+### IN FILE
+
+```bash
+#!/bin/bash -eu
+
+# # Header1
+# 
+# This is example bash script for
+# convert to markdown style
+
+# ## Header2
+
+echo ok
+echo ok # line end code comment
+
+# This is comment line
+# This is comment line
+
+echo some command
+echo "i wanna conver to markdown this file"
+```
+
+### OUT FILE
+
+    ```
+    # Header1
+    
+    This is example bash script for
+    convert to markdown style
+    
+    ## Header2
+    
+    ```bash
+    echo ok
+    echo ok # line end code comment
+    ```
+    
+    This is comment line
+    This is comment line
+    
+    ```bash
+    echo some command
+    echo "i wanna conver to markdown this file"
+    ```
 
 ## Development
 
@@ -40,4 +91,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Script2md project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/script2md/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Script2md project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/YumaInaura/script2md/blob/master/CODE_OF_CONDUCT.md).
