@@ -14,5 +14,5 @@ puts :ok # line end code comment
 # This is comment line
 
 puts :some_string
-puts "i wanna conver to markdown this file"
+puts "i wanna convert to markdown this file"
 
