@@ -38,12 +38,12 @@ script2md https://raw.githubusercontent.com/YumaInaura/script2md/master/spec/fix
 
 ### IN FILE
 
-```bash
+```sh
 #!/bin/bash -eu
 
 # # Header1
 # 
-# This is example bash script for
+# This is example script for
 # convert to markdown style
 
 # ## Header2
@@ -63,12 +63,12 @@ echo "i wanna conver to markdown this file"
     ```
     # Header1
     
-    This is example bash script for
+    This is example script for
     convert to markdown style
     
     ## Header2
     
-    ```bash
+    ```sh
     echo ok
     echo ok # line end code comment
     ```
@@ -76,7 +76,7 @@ echo "i wanna conver to markdown this file"
     This is comment line
     This is comment line
     
-    ```bash
+    ```sh
     echo some command
     echo "i wanna conver to markdown this file"
     ```

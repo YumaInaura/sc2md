@@ -1,18 +1,18 @@
 require "script2md/version"
 
 module Script2md
-  def self.convert(text)
-    output = Convert.new(text).convert.text
-    output = output
-     output
+  def self.convert(text, language_type: nil)
+    output = Convert.new(text, language_type: language_type).convert.text
+    output
   end
 
   class Convert
-    def initialize(text)
+    def initialize(text, language_type: nil)
       @text = text
+      @language_type = language_type
     end
 
-    attr_reader :text
+    attr_reader :text, :language_type
 
     def convert
       remove_shebang!
@@ -31,7 +31,7 @@ module Script2md
     end
 
     def code_into_codeblock!
-      text.gsub!(/((^(?!#)[^\n\r].+[\n\r]?)(^(?!#).[^\n\r]*[\n\r]?)*)/, "```bash\n\\1```\n")
+      text.gsub!(/((^(?!#)[^\n\r].+[\n\r]?)(^(?!#).[^\n\r]*[\n\r]?)*)/, "```#{language_type}\n\\1```\n")
     end
 
     def headling_comment_to_plaintext!
