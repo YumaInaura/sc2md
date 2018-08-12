@@ -15,6 +15,6 @@ require 'open-uri'
     file_path = ARGV[0]
     language_type = file_path.match(/\.([a-z]+)\z/)[1] || nil
     filebody = File.read(file_path)
-    puts Script2md.convert(filebody, language_type: language_type)
+    puts Script2md.convert(filebody, language_type: language_type, source_path: file_path)
   end
 

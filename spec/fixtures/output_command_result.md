@@ -22,4 +22,10 @@ echo "i wanna make you love me"
 
 ## Output example
 
-!OUTPUT!
+```
+ok
+ok
+some string
+i wanna convert to markdown this file
+i wanna make you love me
+```
