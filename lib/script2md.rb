@@ -40,7 +40,7 @@ module Script2md
     end
 
     def format!
-      text.gsub!(/\A[\n\r]+|[\n\r]+\z/, '') # Remove trailing empty lines
+      text.gsub!(/\A[\n\r]+|[\n\r]+\z/, '')
     end
   end
 end
