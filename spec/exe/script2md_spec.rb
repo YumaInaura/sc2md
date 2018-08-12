@@ -21,12 +21,18 @@ RSpec.describe 'script2md' do
         let(:file_path) { 'https://raw.githubusercontent.com/YumaInaura/script2md/master/spec/fixtures/example.sh' }
         let(:converted_markdown) { File.read('spec/fixtures/example.sh.md') }
   
-        it { is_expected.to eq converted_markdown.chomp }
+        it 'includes markdown fragment' do
+          is_expected.to include '```'
+        end
       end
   
       context 'when rb file' do
         let(:file_path) { 'https://raw.githubusercontent.com/YumaInaura/script2md/master/spec/fixtures/example.rb' }
         let(:converted_markdown) { File.read('spec/fixtures/example.rb.md') }
+
+        it 'includes markdown fragment' do
+          is_expected.to include '```'
+        end
       end
     end  
   end
