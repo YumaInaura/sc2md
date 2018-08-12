@@ -31,7 +31,7 @@ module Script2md
     end
 
     def code_into_codeblock!
-      text.gsub!(/((^(?!#)[^\n\r].+[\n\r]?)(^(?!#).[^\n\r]*[\n\r]?)*)/, "```#{language_type}\n\\1```\n")
+      text.gsub!(/(^(?!#).+$\n?)((^(?!#).*$\n?)*(^(?!#).+$))?/, "```#{language_type}\n\\0\n```")
     end
 
     def headling_comment_to_plaintext!
