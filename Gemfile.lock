@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    script2md (0.1.0)
+    script2md (1.0.0)
 
 GEM
   remote: https://rubygems.org/
