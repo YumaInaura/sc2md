@@ -6,15 +6,20 @@
 require 'script2md'
 require 'open-uri'
 
-  if /\Ahttps?:/ =~ ARGV[0]
-    file_path = ARGV[0].chomp
-    language_type = file_path.match(/\.([a-z]+)\z/)[1] || nil
-    filebody = OpenURI.open_uri(file_path).read
-    puts Script2md.convert(filebody, language_type: language_type)
-  else
-    file_path = ARGV[0]
-    language_type = file_path.match(/\.([a-z]+)\z/)[1] || nil
-    filebody = File.read(file_path)
-    puts Script2md.convert(filebody, language_type: language_type)
-  end
+if (ARGV & ['--version', '-v']).size > 0
+  puts "#{Script2md.to_s.downcase} #{Script2md::VERSION}" # e.g script2md 1.1.0
+  abort
+end
+
+if /\Ahttps?:/ =~ argv[0]
+  file_path = ARGV[0].chomp
+  language_type = file_path.match(/\.([a-z]+)\z/)[1] || nil
+  filebody = OpenURI.open_uri(file_path).read
+  puts Script2md.convert(filebody, language_type: language_type)
+else
+  file_path = ARGV[0]
+  language_type = file_path.match(/\.([a-z]+)\z/)[1] || nil
+  filebody = File.read(file_path)
+  puts Script2md.convert(filebody, language_type: language_type)
+end
 
