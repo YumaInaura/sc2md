@@ -1,8 +1,8 @@
-# Sc2md
+# sc2md
 
-meanse **Script to Markdown**.
+Simple Ruby gem.
 
-It is a Simple Ruby gem.
+It means **Script to Markdown**.
 
 Convert script file ( e.g `.sh` `.rb` ) to Markdown file.
 
@@ -15,14 +15,6 @@ Add this line to your application's Gemfile:
 ```ruby
 gem 'sc2md'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sc2md
 
 ## Usage
 
@@ -38,7 +30,13 @@ or
 sc2md https://raw.githubusercontent.com/YumaInaura/sc2md/master/spec/fixtures/example.sh
 ```
 
-### IN FILE
+#### Output to file
+
+```
+sc2md spec/fixtures/example.sh > converted.md
+```
+
+### Input file example
 
 ```sh
 #!/bin/bash -eu
@@ -60,7 +58,7 @@ echo some command
 echo "i wanna conver to markdown this file"
 ```
 
-### OUT FILE
+### Output file example
 
     ```
     # Header1
@@ -92,5 +90,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
 
