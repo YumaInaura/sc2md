@@ -11,7 +11,7 @@ It just only replace script comment line with markdown plain text, and script co
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'script2md'
+gem 'sc2md'
 ```
 
 And then execute:
@@ -20,7 +20,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install script2md
+    $ gem install sc2md
 
 ## Usage
 
@@ -33,7 +33,7 @@ sc2md spec/fixtures/example.sh
 or
 
 ```
-sc2md https://raw.githubusercontent.com/YumaInaura/script2md/master/spec/fixtures/example.sh
+sc2md https://raw.githubusercontent.com/YumaInaura/sc2md/master/spec/fixtures/example.sh
 ```
 
 ### IN FILE

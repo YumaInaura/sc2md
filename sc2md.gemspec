@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "script2md/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "script2md"
+  spec.name          = "sc2md"
   spec.version       = Script2md::VERSION
   spec.authors       = ["Yumainaura"]
   spec.email         = ["yuma.inaura@gmail.com"]
 
   spec.summary       = %q{Convert script to markdown style}
   spec.description   = %q{Convert script to markdown style}
-  spec.homepage      = "https://github.com/YumaInaura/script2md"
+  spec.homepage      = "https://github.com/YumaInaura/sc2md"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
