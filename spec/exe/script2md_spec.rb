@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 RSpec.describe 'script2md' do
     subject { `script2md #{file_path}`.chomp } 
 
