@@ -19,7 +19,3 @@ echo some string
 echo "i wanna convert to markdown this file" # For save my console world
 echo "i wanna make you love me"
 ```
-
-## Output example
-
-!OUTPUT!

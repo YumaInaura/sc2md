@@ -1,4 +1,6 @@
 require "bundler/setup"
+require "pry"
+
 require "script2md"
 
 RSpec.configure do |config|

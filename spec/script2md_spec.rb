@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 RSpec.describe Script2md do
   describe '.convert' do
     subject { described_class.convert(text, language_type: language_type)  } 
