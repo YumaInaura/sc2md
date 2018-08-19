@@ -66,7 +66,7 @@ module Script2md
     def fill_command_output!
       output = ''
       text.each_line do |line|
-        if line == '!OUTPUT!'
+        if line.chomp == '!OUTPUT!'
           output += "```\n" + `#{source_path}` + "```\n"
         else
           output += line

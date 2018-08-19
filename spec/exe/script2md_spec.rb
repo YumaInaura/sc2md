@@ -3,15 +3,15 @@ RSpec.describe 'script2md' do
 
     context 'when read from local file' do
       context 'when sh file' do
-        let(:file_path) { './spec/fixtures/example.sh' }
-        let(:converted_markdown) { File.read('./spec/fixtures/example.sh.output.md') }
+        let(:file_path) { './spec/fixtures/output.sh' }
+        let(:converted_markdown) { File.read('./spec/fixtures/output.sh.md').chomp }
   
         it { is_expected.to eq converted_markdown.chomp }
       end
   
       context 'when rb file' do
         let(:file_path) { './spec/fixtures/example.rb' }
-        let(:converted_markdown) { File.read('spec/fixtures/example.rb.md') }
+        let(:converted_markdown) { File.read('spec/fixtures/example.rb.md').chomp }
   
         it { is_expected.to eq converted_markdown.chomp }
     end
@@ -19,7 +19,7 @@ RSpec.describe 'script2md' do
     context 'when read from remote file' do
       context 'when sh file' do
         let(:file_path) { 'https://raw.githubusercontent.com/YumaInaura/script2md/master/spec/fixtures/example.sh' }
-        let(:converted_markdown) { File.read('spec/fixtures/example.sh.md') }
+        let(:converted_markdown) { File.read('spec/fixtures/example.sh.md').chomp }
   
         it 'includes markdown fragment' do
           is_expected.to include '```'
@@ -28,7 +28,7 @@ RSpec.describe 'script2md' do
   
       context 'when rb file' do
         let(:file_path) { 'https://raw.githubusercontent.com/YumaInaura/script2md/master/spec/fixtures/example.rb' }
-        let(:converted_markdown) { File.read('spec/fixtures/example.rb.md') }
+        let(:converted_markdown) { File.read('spec/fixtures/example.rb.md').chomp }
 
         it 'includes markdown fragment' do
           is_expected.to include '```'
