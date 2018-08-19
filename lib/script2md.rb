@@ -2,17 +2,14 @@ require "script2md/version"
 
 module Script2md
   def self.convert(text, language_type: nil)
-    # FIXME: Prevent gsub! break original text value
-    original_script_text = text.clone
-
     output = Convert.new(text, language_type: language_type).convert.text
-    output = Fill.new(output, script: original_script_text).convert.text
+    output = Fill.new(output, script: text).convert.text
     output
   end
 
   class Convert
     def initialize(text, language_type: nil)
-      @text = text
+      @text = text.clone
       @language_type = language_type
     end
 
@@ -50,7 +47,7 @@ module Script2md
 
   class Fill
     def initialize(text, script: nil)
-      @text = text
+      @text = text.clone
       @script = script
     end
 
