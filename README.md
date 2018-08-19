@@ -1,4 +1,6 @@
-# Script2md
+# Sc2md
+
+meanse **Script to Markdown**.
 
 It is a Simple Ruby gem.
 
