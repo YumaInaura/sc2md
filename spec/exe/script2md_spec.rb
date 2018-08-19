@@ -3,8 +3,8 @@ RSpec.describe 'script2md' do
 
     context 'when read from local file' do
       context 'when sh file' do
-        let(:file_path) { './spec/fixtures/example.sh' }
-        let(:converted_markdown) { File.read('./spec/fixtures/example.sh.output.md') }
+        let(:file_path) { './spec/fixtures/output.sh' }
+        let(:converted_markdown) { File.read('./spec/fixtures/output.sh.md') }
   
         it { is_expected.to eq converted_markdown.chomp }
       end
