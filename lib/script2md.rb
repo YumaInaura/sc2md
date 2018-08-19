@@ -32,12 +32,12 @@ module Script2md
     end
 
     def code_into_codeblock!
-      text.gsub!(/(^(?!#).+$\n?)((^(?!#).*$\n?)*(^(?!#).+$))?/, "```#{language_type}\n\\0\n```")
+      text.gsub!(/(^(?!##).+$\n?)((^(?!##).*$\n?)*(^(?!##).+$))?/, "```#{language_type}\n\\0\n```")
     end
 
     def headling_comment_to_plaintext!
-      text.gsub!(/^#\s+?$/, "")
-      text.gsub!(/^#\s+?([^\n\r]+)$/, "\\1")
+      text.gsub!(/^##\s+?$/, "")
+      text.gsub!(/^##\s+?([^\n\r]+)$/, "\\1")
     end
 
     def format!

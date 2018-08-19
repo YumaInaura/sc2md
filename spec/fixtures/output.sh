@@ -1,15 +1,15 @@
 #!/bin/bash -eu
 
-# ## Script
+## ## Script
 
 echo OK
 echo OK
 
-# ## Output example
+## ## Output example
 
-# !OUTPUT!
+## !OUTPUT!
 
-# ## Links
+## ## Links
 
-# - [Example](https://example.com)
+## - [Example](https://example.com)
 
