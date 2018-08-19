@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Convert script to markdown style}
   spec.description   = %q{Convert script to markdown style}
-  spec.homepage      = "https://github.com/YumaInaura/script2md"
+  spec.homepage      = "https://github.com/YumaInaura/sc2md"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
