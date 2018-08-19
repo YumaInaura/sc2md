@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'script2md' do
-    subject { `script2md #{file_path}`.chomp } 
+    subject { `sc2md #{file_path}`.chomp } 
 
     context 'when read from local file' do
       context 'when sh file' do
