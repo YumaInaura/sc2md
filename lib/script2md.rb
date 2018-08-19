@@ -1,9 +1,12 @@
 require "script2md/version"
 
 module Script2md
-  def self.convert(text, language_type: nil, source_path: nil)
+  def self.convert(text, language_type: nil)
+    # FIXME: Prevent gsub! break original text value
+    original_script_text = text.clone
+
     output = Convert.new(text, language_type: language_type).convert.text
-    output = Fill.new(output, source_path: source_path).convert.text if source_path
+    output = Fill.new(output, script: original_script_text).convert.text
     output
   end
 
@@ -46,9 +49,9 @@ module Script2md
   end
 
   class Fill
-    def initialize(text, source_path: nil)
+    def initialize(text, script: nil)
       @text = text
-      @source_path = source_path
+      @script = script
     end
 
     attr_reader :text
@@ -61,13 +64,16 @@ module Script2md
     private
 
     attr_writer :text
-    attr_accessor :source_path
+    attr_accessor :script
 
     def fill_command_output!
       output = ''
       text.each_line do |line|
         if line.chomp == '!OUTPUT!'
-          output += "```\n" + `#{source_path}` + "```\n"
+          File.write('./tmpscript', script)
+          File.chmod(0700, './tmpscript')
+          output += "```\n" + `./tmpscript` + "```\n"
+          File.delete('./tmpscript')
         else
           output += line
         end
