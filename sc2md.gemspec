@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "script2md/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "script2md"
+  spec.name          = "sc2md"
   spec.version       = Script2md::VERSION
   spec.authors       = ["Yumainaura"]
   spec.email         = ["yuma.inaura@gmail.com"]
